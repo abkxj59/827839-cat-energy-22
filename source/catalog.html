@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Кэт энерджи</title>
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body class=page__body>
     <header class="page-header wrapper">
@@ -197,10 +198,12 @@
           <a class="product__button button" href="#">Заказать</a>
         </div>
       </article>
-      <article class="products__item products__item--more product">
-        <h3 class="product__title">Показать еще 100500 товаров</h3>
-        <p class="product__specs">На самом деле вкусов гораздо больше!</p>
-        <a class="product__button button button--more" href="#">Показать все</a>
+      <article class="products__item product--more">
+        <div class="product__wrapper wrapper">
+          <h3 class="product__title">Показать еще 100500 товаров</h3>
+          <p class="product__specs">На самом деле вкусов гораздо больше!</p>
+          <a class="product__button button button--more" href="#">Показать все</a>
+        </div>
       </article>
     </section>
 
@@ -251,8 +254,10 @@
     </section>
 
     <section class="gift wrapper">
-      <h2 class="gift__title">Акция!</h2>
-      <p class="gift__text">Закажите все и получите чехол для кота в подарок</p>
+      <div class="gift__box">
+        <h2 class="gift__title visually-hidden">Акция!</h2>
+        <p class="gift__text">Закажите все и получите чехол для кота в подарок</p>
+      </div>
     </section>
 
     <footer class="page-footer">
