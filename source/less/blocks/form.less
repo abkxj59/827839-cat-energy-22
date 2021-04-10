@@ -1,0 +1,46 @@
+.form__fieldset {
+  padding: 0;
+  border: none;
+  border-top: 2px solid @green;
+
+  &:first-child {
+    border: none;
+  }
+}
+
+.form__legend {
+  padding: 0 20px;
+  font-size: 24px;
+  line-height: 26px;
+  max-width: 187px;
+}
+
+.form__label {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 18px;
+  color: @dark-grey;
+}
+
+.form__input {
+  .form-border();
+  font-family: "Oswald", "Arial", sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 18px;
+  color: @dark-grey;
+
+  &::placeholder {
+    font-family: "Oswald", "Arial", sans-serif;
+  }
+}
+
+.form__purpose {
+  .form-border();
+}
+
+.form__note {
+  font-family: "Arial", sans-serif;
+  text-align: center;
+}
