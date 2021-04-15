@@ -1,8 +1,18 @@
 .nav__list {
   .reset-list();
+
+  @media (min-width: @tablet-width) {
+    display: flex;
+    width: 440px;
+    justify-content: space-between;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 480px;
+  }
 }
 
-.nav__item a {
+.nav__link {
   display: inline-block;
   text-decoration: none;
   color: black;
@@ -13,4 +23,18 @@
   text-transform: uppercase;
   text-align: center;
   width: 100%;
+
+  @media (min-width: @tablet-width) {
+    font-size: 18px;
+  }
+
+  @media (min-width: @desktop-width) {
+    font-size: 20px;
+  }
+}
+
+.nav__list--main .nav__link {
+  @media (min-width: @desktop-width) {
+    color: white;
+  }
 }

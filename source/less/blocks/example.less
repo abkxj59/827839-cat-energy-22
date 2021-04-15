@@ -2,6 +2,18 @@
   background-color: @grey;
 }
 
+.example__wrapper {
+  @media (min-width: @desktop-width) {
+    display: flex;
+  }
+}
+
+.example__content {
+  @media (min-width: @desktop-width) {
+    width: 570px;
+  }
+}
+
 .example__text {
   .basic-text();
 }

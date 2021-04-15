@@ -1,6 +1,11 @@
 .wrapper {
   min-width: 320px;
+  max-width: 1440px;
   padding: 0 20px;
   margin: 0 auto;
   box-sizing: border-box;
+
+  @media (min-width: @tablet-width) {
+    padding: 0 30px;
+  }
 }

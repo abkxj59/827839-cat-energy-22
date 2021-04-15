@@ -4,7 +4,7 @@
   font-style: normal;
   font-size: 14px;
   line-height: 18px;
-  width: 320px;
+  min-width: 320px;
 }
 
 .page__body {
@@ -16,11 +16,20 @@
   line-height: 36px;
   font-weight: 400;
   padding-top: 27px;
+  margin: 0;
 }
 
 .page__title--main {
   text-align: center;
   color: white;
+
+  @media (min-width: @tablet-width) {
+    text-align: left;
+    color: black;
+    font-size: 60px;
+    line-height: 60px;
+    max-width: 420px;
+  }
 }
 
 .page__description {
@@ -30,4 +39,10 @@
 .page__description--main {
   text-align: center;
   color: white;
+
+  @media (min-width: @tablet-width) {
+    text-align: left;
+    color: black;
+    font-size: 20px;
+  }
 }
