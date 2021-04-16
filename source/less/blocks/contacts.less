@@ -1,3 +1,16 @@
+.contacts {
+  display: flex;
+  justify-content: space-between;
+
+  @media (min-width: @desktop-width) {
+    position: absolute;
+    width: 570px;
+    height: 201px;
+    background-color: white;
+    top: 95px;
+  }
+}
+
 .contacts__text {
   font-size: 16px;
   text-transform: uppercase;
@@ -5,4 +18,17 @@
 
 .contacts__adress {
   .basic-text();
+}
+
+.contacts__text,
+.contacts__adress {
+  width: 140px;
+
+  @media (min-width: @tablet-width) {
+    width: 180px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 245px;
+  }
 }
