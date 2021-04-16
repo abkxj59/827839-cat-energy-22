@@ -30,6 +30,7 @@ const server = (done) => {
     server: {
       baseDir: 'source'
     },
+    browser: 'Google Chrome',
     cors: true,
     notify: false,
     ui: false,

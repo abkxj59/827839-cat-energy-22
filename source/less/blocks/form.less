@@ -1,10 +1,49 @@
 .form__fieldset {
   padding: 0;
   border: none;
+  margin: 0;
   border-top: 2px solid @green;
 
   &:first-child {
     border: none;
+  }
+}
+
+.form__main-info {
+  @media (min-width: @desktop-width) {
+    display: grid;
+    grid-template-columns: 570px 570px;
+    column-gap: 80px;
+    margin: 0 auto;
+    padding: 0 30px;
+    max-width: 1220px;
+    box-sizing: border-box;
+  }
+}
+
+.form__cat-info {
+  margin: 0;
+
+  @media (min-width: @desktop-width) {
+    padding: 0;
+  }
+}
+
+.form__purpose {
+  .form-border();
+  border-left: none;
+  border-right: none;
+  grid-template-columns: auto;
+  padding: 0 20px;
+
+  @media (min-width: @tablet-width) {
+    .form-border();
+    margin: 0 70px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin: 0;
+    max-width: 570px;
   }
 }
 
@@ -16,11 +55,22 @@
 }
 
 .form__label {
-  display: inline-block;
+  display: flex;
   text-transform: uppercase;
   font-size: 16px;
   line-height: 18px;
   color: @dark-grey;
+  width: 100%;
+
+  &--radio,
+  &--checkbox {
+    display: inline-block;
+    width: max-content;
+  }
+}
+
+.form__label-text {
+  margin: auto 0;
 }
 
 .form__input {
@@ -30,17 +80,67 @@
   font-size: 16px;
   line-height: 18px;
   color: @dark-grey;
+  flex-grow: 1;
+  height: 45px;
+
+  @media (min-width: @tablet-width) {
+    height: 52px;
+    box-sizing: border-box;
+  }
+
+  &--textarea {
+    // display: flex;
+    resize: none;
+    width: 100%;
+    height: 150px;
+
+    @media (min-width: @tablet-width) {
+      height: 174px;
+    }
+  }
+
+  &[type=radio],
+  &[type=checkbox] {
+    width: 10px;
+    height: 10px;
+  }
 
   &::placeholder {
     font-family: "Oswald", "Arial", sans-serif;
   }
 }
 
-.form__purpose {
-  .form-border();
+.form__extras .form__wrapper {
+  display: grid;
+
+  @media (min-width: @tablet-width) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 60px;
+  }
+
+  @media (min-width: @desktop-width) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 80px;
+
+
+  }
+}
+
+.form__button {
+  @media (min-width: @desktop-width) {
+    grid-column: span 2;
+  }
 }
 
 .form__note {
   font-family: "Arial", sans-serif;
   text-align: center;
+
+  @media (min-width: @tablet-width) {
+    text-align: start;
+  }
+
+  @media (min-width: @desktop-width) {
+    grid-column: span 2;
+  }
 }
