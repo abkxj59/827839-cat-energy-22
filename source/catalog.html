@@ -2,6 +2,7 @@
 <html lang="ru" class="page">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HTML Academy: Кэт энерджи</title>
     <link href="css/style.css" rel="stylesheet">
   </head>
@@ -13,16 +14,17 @@
       </a>
       <button class="page-header__toggle">открыть меню</button>
       <nav class="page-header__nav nav">
-        <ul class="nav__list">
-          <li class="nav__item nav__item--current"><a href="index.html">Главная</a></li>
-          <li class="nav__item"><a href="catalog.html">Каталог продукции</a></li>
-          <li class="nav__item"><a href="form.html">Подбор программы</a></li>
+        <ul class="nav__list nav__list">
+          <li class="nav__item nav__item--current"><a class="nav__link" href="index.html">Главная</a></li>
+          <li class="nav__item"><a class="nav__link" href="catalog.html">Каталог продукции</a></li>
+          <li class="nav__item"><a class="nav__link" href="form.html">Подбор программы</a></li>
         </ul>
       </nav>
     </header>
 
+    <h1 class="page__title wrapper">Каталог продукции</h1>
+
     <section class="products">
-      <h1 class="page__title wrapper">Каталог продукции</h1>
       <article class="products__item product">
         <div class="product__wrapper wrapper">
           <a class="product__link" href="#">
@@ -198,7 +200,7 @@
           <a class="product__button button" href="#">Заказать</a>
         </div>
       </article>
-      <article class="products__item product--more">
+      <article class="products__item product product--more">
         <div class="product__wrapper wrapper">
           <h3 class="product__title">Показать еще 100500 товаров</h3>
           <p class="product__specs">На самом деле вкусов гораздо больше!</p>
@@ -250,13 +252,12 @@
           </table>
           <a class="extra__button button" href="#">Заказать</a>
         </article>
-      </div>
-    </section>
-
-    <section class="gift wrapper">
-      <div class="gift__box">
-        <h2 class="gift__title visually-hidden">Акция!</h2>
-        <p class="gift__text">Закажите все и получите чехол для кота в подарок</p>
+        <article class="extras__item extras__item--gift gift">
+          <div class="gift__box">
+            <h2 class="gift__title visually-hidden">Акция!</h2>
+            <p class="gift__text">Закажите все и получите чехол для кота в подарок</p>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -268,7 +269,7 @@
           Санкт-Петербург</p>
       </section>
       <img class="page-footer__map" src="img/map.jpg" alt="Карта" width="320" height="362">
-      <div class="page-footer__bottom footer-bottom">
+      <div class="page-footer__bottom footer-bottom wrapper">
         <img class="footer-bottom__section footer-bottom__logo" src="img/logo-text.svg" alt="Логотип" width="128" height="24">
         <section class="footer-bottom__section social">
           <h2 class="social__title visually-hidden">Соцсети</h2>
