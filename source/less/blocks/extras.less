@@ -3,3 +3,20 @@
   line-height: 24px;
   font-weight: 400;
 }
+
+.extras__wrapper {
+  display: grid;
+
+  @media (min-width: @desktop-width) {
+    grid-template-columns: 3fr 1fr;
+    column-gap: 80px;
+  }
+}
+
+.extras__item--gift {
+  @media (min-width: @desktop-width) {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 5;
+  }
+}

@@ -5,6 +5,27 @@
   &:first-of-type {
     border-top: 1px solid @special-grey;
   }
+
+  @media (min-width: @tablet-width) {
+    border: none;
+
+    &:first-of-type {
+      border-top: none;
+    }
+
+    background-color: @grey;
+  }
+
+  @media (min-width: @desktop-width) {
+    max-width: 245px;
+    box-sizing: border-box;
+  }
+}
+
+.product__wrapper {
+  @media (min-width: @tablet-width) {
+    padding: 0 38px;
+  }
 }
 
 .product__title {
@@ -23,4 +44,9 @@
 
 .product--more {
   text-align: center;
+
+  @media (min-width: @tablet-width) {
+    .form-border();
+    background: none;
+  }
 }
