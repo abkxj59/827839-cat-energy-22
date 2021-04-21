@@ -60,22 +60,21 @@
   }
 
   &--1::before {
-    background-image: url(../img/icon-feature-1.svg)
+    background-image: url("../img/icon-feature-1.svg");
   }
 
   &--2::before {
-    background-image: url(../img/icon-feature-2.svg)
+    background-image: url("../img/icon-feature-2.svg");
   }
 
   &--3::before {
-    background-image: url(../img/icon-feature-3.svg)
+    background-image: url("../img/icon-feature-3.svg");
   }
 
   &--4::before {
-    background-image: url(../img/icon-feature-4.svg)
+    background-image: url("../img/icon-feature-4.svg");
   }
 }
-
 
 .features__item {
   @media (min-width: @tablet-width) {
@@ -89,18 +88,20 @@
       text-align: center;
       color: @grey;
       z-index: -1;
-
     }
 
     &--1::after {
       content: "1";
     }
+
     &--2::after {
       content: "2";
     }
+
     &--3::after {
       content: "3";
     }
+
     &--4::after {
       content: "4";
     }
