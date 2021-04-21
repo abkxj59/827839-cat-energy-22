@@ -1,25 +1,47 @@
+.features {
+  @media (min-width: @tablet-width) {
+    .grey-underline();
+  }
+
+  @media (min-width: @desktop-width) {
+    border: none;
+  }
+}
+
 .features__list {
   list-style: none;
   padding: 0;
+  margin-top: 0;
+  margin-bottom: 40px;
 
   @media (min-width: @tablet-width) {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 60px;
-    row-gap: 37px;
+    column-gap: 15%;
+    row-gap: 80px;
+    margin-bottom: 50px;
   }
 
   @media (min-width: @desktop-width) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 80px;
+    margin-bottom: 10px;
   }
 }
 
 .features__item {
   position: relative;
-  padding-left: 80px;
   margin-bottom: 20px;
-  height: 60px;
+  min-height: 60px;
+  box-sizing: border-box;
+
+  @media (min-width: @tablet-width) {
+    min-height: 227px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin: 0;
+  }
 
   &::before {
     position: absolute;
@@ -28,9 +50,77 @@
     height: 60px;
     left: 0;
     background-color: @green;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media (min-width: @tablet-width) {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &--1::before {
+    background-image: url(../img/icon-feature-1.svg)
+  }
+
+  &--2::before {
+    background-image: url(../img/icon-feature-2.svg)
+  }
+
+  &--3::before {
+    background-image: url(../img/icon-feature-3.svg)
+  }
+
+  &--4::before {
+    background-image: url(../img/icon-feature-4.svg)
+  }
+}
+
+
+.features__item {
+  @media (min-width: @tablet-width) {
+    &::after {
+      position: absolute;
+      top: -40px;
+      right: 15%;
+      width: 135px;
+      font-size: 280px;
+      line-height: 280px;
+      text-align: center;
+      color: @grey;
+      z-index: -1;
+
+    }
+
+    &--1::after {
+      content: "1";
+    }
+    &--2::after {
+      content: "2";
+    }
+    &--3::after {
+      content: "3";
+    }
+    &--4::after {
+      content: "4";
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    &::after {
+      right: 0;
+    }
   }
 }
 
 .features__text {
   .basic-text();
+  padding-left: 80px;
+  margin: 0;
+
+  @media (min-width: @tablet-width) {
+    padding-left: 0;
+    padding-top: 111px;
+    max-width: 250px;
+  }
 }
