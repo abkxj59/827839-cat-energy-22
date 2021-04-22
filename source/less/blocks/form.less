@@ -1,8 +1,17 @@
 .form__fieldset {
   padding: 0;
   border: none;
-  margin: 0;
   border-top: 2px solid @green;
+  margin: 0;
+  margin-bottom: 30px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 50px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-bottom: 60px;
+  }
 
   &:first-child {
     border: none;
@@ -12,9 +21,11 @@
 .form__main-info {
   @media (min-width: @desktop-width) {
     display: grid;
+    align-items: start;
     grid-template-columns: 570px 570px;
     column-gap: 80px;
     margin: 0 auto;
+    margin-bottom: 65px;
     padding: 0 30px;
     max-width: 1220px;
     box-sizing: border-box;
@@ -23,8 +34,14 @@
 
 .form__cat-info {
   margin: 0;
+  margin-bottom: 25px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 65px;
+  }
 
   @media (min-width: @desktop-width) {
+    margin: 0;
     padding: 0;
   }
 }
@@ -33,12 +50,13 @@
   .form-border();
   border-left: none;
   border-right: none;
-  grid-template-columns: auto;
-  padding: 0 20px;
+  // grid-template-columns: auto;
+  padding: 20px;
 
   @media (min-width: @tablet-width) {
     .form-border();
     margin: 0 70px;
+    padding: 25px;
   }
 
   @media (min-width: @desktop-width) {
@@ -47,25 +65,46 @@
   }
 }
 
-.form__legend {
-  padding: 0 20px;
-  font-size: 24px;
-  line-height: 26px;
-  max-width: 187px;
+.form__radiobox {
+  margin: 0;
+  position: relative;
+  margin-bottom: 13px;
+
+  &:last-child {
+    margin: 0;
+  }
 }
 
 .form__label {
+  position: relative;
   display: flex;
   text-transform: uppercase;
   font-size: 16px;
   line-height: 18px;
   color: @dark-grey;
   width: 100%;
+  margin-bottom: 10px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
 
   &--radio,
   &--checkbox {
     display: inline-block;
     width: max-content;
+    box-sizing: border-box;
+    height: 30px;
+    padding-top: 5px;
+    padding-left: 45px;
+    margin: 0;
+
+    @media (min-width: @tablet-width) {
+      height: 40px;
+      padding-left: 60px;
+    }
   }
 }
 
@@ -82,31 +121,190 @@
   color: @dark-grey;
   flex-grow: 1;
   height: 45px;
+  margin-left: 12px;
+  padding: 0 15px;
+  box-sizing: border-box;
 
   @media (min-width: @tablet-width) {
+    font-size: 20px;
+    line-height: 30px;
     height: 52px;
-    box-sizing: border-box;
+    padding: 0 20px;
   }
 
   &--textarea {
-    // display: flex;
     resize: none;
     width: 100%;
     height: 150px;
+    box-sizing: border-box;
+    margin: 0;
+    padding-top: 10px;
 
     @media (min-width: @tablet-width) {
       height: 174px;
     }
   }
 
+  &:hover {
+    border: 1px solid @special-grey2;
+  }
+
+  &:focus {
+    border: 2px solid @dark-grey;
+    outline: none;
+
+    + .form__contacts-icon--email line,
+    + .form__contacts-icon--email path {
+      stroke: @green;
+    }
+
+    + .form__contacts-icon--tel path {
+      fill: @green;
+    }
+  }
+
+  &--error {
+    border: 2px solid @error;
+
+    + .form__contacts-icon--email line,
+    + .form__contacts-icon--email path {
+      stroke: @error;
+    }
+
+    + .form__contacts-icon--tel path {
+      fill: @error;
+    }
+  }
+
   &[type="radio"],
   &[type="checkbox"] {
-    width: 10px;
-    height: 10px;
+    display: none;
+  }
+
+  &[type="radio"] + .form__label:before {
+    border-radius: 50%;
+  }
+
+  &[type="radio"] + .form__label:before,
+  &[type="checkbox"] + .form__label:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    .form-border();
+
+    @media (min-width: @tablet-width) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &[type="radio"]:checked + .form__label:after {
+    content: "";
+    position: absolute;
+    top: 8.25px;
+    left: 8.25px;
+    box-sizing: border-box;
+    width: 13.5px;
+    height: 13.5px;
+    border-radius: 50%;
+    background-color: @green;
+
+    @media (min-width: @tablet-width) {
+      top: 11px;
+      left: 11px;
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &[type="checkbox"]:checked + .form__label:after {
+    position: absolute;
+    content: "";
+    width: 26px;
+    height: 26px;
+    top: 2px;
+    left: 2px;
+    background-image: url("../img/icon-tick.svg");
+
+    @media (min-width: @tablet-width) {
+      top: 7px;
+      left: 7px;
+    }
+  }
+
+  &[type="radio"] + .form__label:hover:before,
+  &[type="checkbox"] + .form__label:hover:before {
+    border: 1px solid @special-grey2;
+  }
+
+  &[type="radio"]:disabled + .form__label,
+  &[type="checkbox"]:disabled + .form__label {
+    opacity: 0.3;
   }
 
   &::placeholder {
     font-family: "Oswald", "Arial", sans-serif;
+  }
+}
+
+.form__legend {
+  font-size: 24px;
+  line-height: 26px;
+  max-width: 187px;
+  padding: 0 20px;
+  margin-bottom: 35px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 36px;
+    line-height: 36px;
+    max-width: max-content;
+    padding: 0 40px;
+    margin-left: 30px;
+    margin-bottom: 75px;
+
+    &:last-of-type {
+      margin-bottom: 55px;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-left: 70px;
+  }
+}
+
+.form__contacts .form__wrapper {
+  @media (min-width: @desktop-width) {
+    display: grid;
+    grid-template-columns: 570px 570px;
+    column-gap: 80px;
+  }
+}
+
+.form__contacts-icon {
+  position: absolute;
+
+  &--email {
+    top: 16px;
+    right: 15px;
+
+    @media (min-width: @tablet-width) {
+      top: 19px;
+      right: 19px;
+    }
+  }
+
+  &--tel {
+    top: 13px;
+    right: 13px;
+
+    @media (min-width: @tablet-width) {
+      top: 16px;
+      right: 17px;
+    }
   }
 }
 
@@ -116,6 +314,7 @@
   @media (min-width: @tablet-width) {
     grid-template-columns: 1fr 1fr;
     column-gap: 60px;
+    row-gap: 20px;
   }
 
   @media (min-width: @desktop-width) {
@@ -125,6 +324,8 @@
 }
 
 .form__button {
+  margin-top: 20px;
+
   @media (min-width: @desktop-width) {
     grid-column: span 2;
   }
@@ -133,6 +334,8 @@
 .form__note {
   font-family: "Arial", sans-serif;
   text-align: center;
+  padding: 0;
+  align-self: center;
 
   @media (min-width: @tablet-width) {
     text-align: start;
