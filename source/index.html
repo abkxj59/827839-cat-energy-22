@@ -80,17 +80,19 @@
         <div class="example__content">
           <h2 class="example__title page__section-title">Живой пример</h2>
           <p class="example__text">Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.</p>
-          <dl class="example__numbers numbers">
-            <div class="numbers__item ">
-              <dt class="numbers__number">5 кг</dt>
-              <dd class="numbers__description">снижение веса</dd>
-            </div>
-            <div class="numbers__item">
-              <dt class="numbers__number">60 дней</dt>
-              <dd class="numbers__description">затрачено времени</dd>
-            </div>
+          <div class="example__numbers numbers">
+            <dl class="numbers__list">
+              <div class="numbers__item">
+                <dt class="numbers__number">5 кг</dt>
+                <dd class="numbers__description">снижение веса</dd>
+              </div>
+              <div class="numbers__item">
+                <dt class="numbers__number">60 дней</dt>
+                <dd class="numbers__description">затрачено времени</dd>
+              </div>
+            </dl>
             <p class="numbers__cost">Затраты на питание:<span class="numbers__cost-space"> </span>15 000 руб.</p>
-          </dl>
+          </div>
         </div>
         <div class="example__slider slider">
           <img class="slider__img slider__img--before" src="img/cat-before-mobile.png" width="311" height="232" alt="Кот до">
@@ -147,7 +149,7 @@
             </ul>
           </section>
           <section class="footer-bottom__section copyright">
-            <h2 class="copyright__title visually-hidden">Копирайт</h2>
+            <h2 class="copyright__title" hidden>Копирайт</h2>
             <a class="copyright__text" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy</a>
             <a class="copyright__icon" href="https://htmlacademy.ru/intensive/adaptive">
               <svg width="27" height="34" viewBox="0 0 27 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -159,23 +161,6 @@
       </div>
     </footer>
 
-    <script>
-      var navMain = document.querySelector('.nav');
-      var navToggle = document.querySelector('.nav__toggle');
-
-      navMain.classList.remove('nav--nojs');
-      navMain.classList.add('nav--closed');
-      navMain.classList.remove('nav--opened');
-
-      navToggle.addEventListener('click', function() {
-        if (navMain.classList.contains('nav--closed')) {
-          navMain.classList.remove('nav--closed');
-          navMain.classList.add('nav--opened');
-        } else {
-          navMain.classList.add('nav--closed');
-          navMain.classList.remove('nav--opened');
-        }
-      });
-    </script>
+    <script src="js/script.js"></script>
   </body>
 </html>
