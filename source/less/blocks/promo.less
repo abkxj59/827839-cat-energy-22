@@ -1,5 +1,4 @@
 .promo {
-  position: relative;
   width: 100%;
 
   &::before {
@@ -21,36 +20,48 @@
       display: block;
       position: absolute;
       content: "";
-      width: 720px;
+      width: 50%;
       height: 694px;
       background:
         linear-gradient(to top, rgba(@green, 0.85), rgba(@green, 0.85)),
         url("../img/promo-background.jpg");
       background-repeat: no-repeat;
-      right: 0;
-      top: -41px;
+      left: 50%;
+      top: 0;
       z-index: -1;
     }
   }
 }
 
 .promo__img {
+  display: block;
+  margin: 0 auto;
+
   @media (min-width: @tablet-width) {
     position: absolute;
+    left: 50%;
+    margin-left: -354px;
     width: 708px;
+    z-index: -1;
   }
 
   @media (min-width: @desktop-width) {
     width: 552px;
-    right: 330px;
-    top: 0;
+    left: 38%;
+    top: 141px;
+    margin: 0;
   }
 }
 
 .promo__button {
+  font-size: 14px;
+  line-height: 18px;
+
   @media (min-width: @tablet-width) {
     width: 244px;
     margin-bottom: 600px;
+    font-size: 20px;
+    line-height: 20px;
   }
 
   @media (min-width: @desktop-width) {

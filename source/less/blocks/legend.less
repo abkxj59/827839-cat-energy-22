@@ -1,0 +1,52 @@
+.legend__text {
+  text-transform: uppercase;
+  font-size: 16px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 20px;
+    padding: 8px 0;
+    border-bottom: 1px dotted rgba(black, 0.24);
+  }
+}
+
+.legend:hover .legend__text {
+  @media (min-width: @tablet-width) {
+    border-bottom: 1px solid rgba(black, 0.4);
+  }
+}
+
+.legend:focus .legend__text {
+  @media (min-width: @tablet-width) {
+    border: none;
+  }
+}
+
+.legend__toggle {
+  &-content {
+    display: none;
+  }
+
+  position: relative;
+  width: 30%;
+  height: 14px;
+  background-color: white;
+  .form-border();
+  border-radius: 6px;
+  margin: 30px 12px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 45%;
+    height: 6px;
+    border-radius: 6px;
+    background-color: @green;
+  }
+
+  &--after::after {
+    left: auto;
+    right: 5px;
+  }
+}

@@ -1,4 +1,31 @@
+.copyright {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .copyright__text {
   .basic-text();
   font-size: 16px;
+
+  &:focus {
+    opacity: 0.3;
+  }
+}
+
+.copyright__icon {
+  margin-left: auto;
+
+  @media (min-width: @tablet-width) {
+    margin-left: 22px;
+  }
+
+  &:hover path {
+    fill: @green;
+  }
+
+  &:focus path {
+    fill: @green;
+    opacity: 0.3;
+  }
 }

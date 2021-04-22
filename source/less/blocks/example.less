@@ -1,5 +1,23 @@
 .example {
-  background-color: @grey;
+  position: relative;
+
+  &::before {
+    background-color: @grey;
+    position: absolute;
+    content: "";
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+
+    @media (min-width: @tablet-width) {
+      top: 420px;
+    }
+
+    @media (min-width: @desktop-width) {
+      top: 195px;
+    }
+  }
 }
 
 .example__wrapper {
@@ -16,14 +34,16 @@
 
 .example__text {
   .basic-text();
-}
 
-.example__cost {
-  text-align: center;
-  text-transform: uppercase;
+  @media (min-width: @desktop-width) {
+    padding-top: 70px;
+  }
 }
 
 .example__slider {
-  text-transform: uppercase;
-  font-size: 16px;
+  text-align: center;
+
+  @media (min-width: @desktop-width) {
+    flex-grow: 1;
+  }
 }

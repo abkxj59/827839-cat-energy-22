@@ -2,4 +2,29 @@
   .reset-list();
   display: flex;
   column-gap: 30px;
+  width: 130px;
+  margin: 0 auto;
+  align-items: flex-end;
+}
+
+.social__link {
+  &:hover path {
+    fill: @green;
+  }
+
+  &--fb:hover path {
+    fill: none;
+    stroke: @green;
+  }
+
+  &:focus path {
+    fill: @green;
+    opacity: 0.3;
+  }
+
+  &--fb:focus path {
+    fill: none;
+    stroke: @green;
+    opacity: 0.3;
+  }
 }
