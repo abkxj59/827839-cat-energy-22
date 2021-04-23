@@ -18,19 +18,22 @@
   padding-top: 27px;
   margin: 0;
   margin-bottom: 40px;
-}
 
-.page__title--main {
-  text-align: center;
-  color: white;
-  margin-bottom: 25px;
+  &--main {
+    text-align: center;
+    color: white;
+    margin-bottom: 25px;
+  }
 
   @media (min-width: @tablet-width) {
-    text-align: left;
-    color: black;
     font-size: 60px;
     line-height: 60px;
-    max-width: 420px;
+
+    &--main {
+      text-align: left;
+      color: black;
+      max-width: 420px;
+    }
   }
 }
 
@@ -40,19 +43,20 @@
 
   @media (min-width: @tablet-width) {
     margin-bottom: 65px;
-  }
-}
-
-.page__description--main {
-  text-align: center;
-  color: white;
-  margin-bottom: 30px;
-
-  @media (min-width: @tablet-width) {
-    text-align: left;
-    color: black;
     font-size: 20px;
-    margin-bottom: 50px;
+    line-height: 20px;
+  }
+
+  &--main {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+
+    @media (min-width: @tablet-width) {
+      text-align: left;
+      color: black;
+      margin-bottom: 50px;
+    }
   }
 }
 
