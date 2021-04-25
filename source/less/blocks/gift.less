@@ -1,16 +1,62 @@
 .gift__box {
-  width: 100%;
+  position: relative;
+  width: 280px;
   height: 289px;
   background: url("../img/gift-mobile.jpg");
+  background-color: @green;
   background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
+
+  @media (min-width: @tablet-width) {
+    background: url("../img/gift-tablet.jpg");
+    width: 708px;
+    height: 200px;
+  }
+
+  @media (min-width: @desktop-width) {
+    background: url("../img/gift-desktop.jpg");
+    width: 245px;
+    height: 289px;
+  }
 }
 
 .gift__text {
   font-family: "Arial", sans-serif;
   font-size: 16px;
   line-height: 20px;
-  padding: 186px 50px;
-  padding-bottom: 0;
-  text-align: center;
+  margin: 0;
+  padding: 186px 50px 0;
   color: white;
+  text-align: center;
+
+  @media (min-width: @tablet-width) and (max-width: (@desktop-width - 1)) {
+    padding-top: 71px;
+    padding-left: 423px;
+    padding-right: 120px;
+    text-align: start;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 78px;
+    height: 80px;
+    top: 58px;
+    left: 50%;
+    margin-left: -39px;
+    background-image: url(../img/icon-gift.svg);
+
+    @media (min-width: @tablet-width) {
+      width: 80px;
+      height: 82px;
+      left: 78px;
+    }
+
+    @media (min-width: @desktop-width) {
+      top: 56px;
+      margin-left: -40px;
+      left: 50%;
+    }
+  }
 }

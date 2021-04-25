@@ -20,4 +20,18 @@
     background-color: @special-green;
     color: rgba(white, 0.3);
   }
+
+  &--grey {
+    background-color: @grey;
+    color: @dark-grey;
+
+    &:hover {
+      background-color: @special-grey3;
+    }
+
+    &:focus {
+      background-color: @special-grey3;
+      color: rgba(@dark-grey, 0.3);
+    }
+  }
 }
