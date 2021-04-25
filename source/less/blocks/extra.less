@@ -1,9 +1,22 @@
 .extra {
   border-bottom: 1px solid @special-grey;
-  padding-bottom: 18px;
+  // padding-bottom: 18px;
 
   &:first-of-type {
     border-top: 1px solid @special-grey;
+  }
+
+  @media (min-width: @tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media (min-width: @tablet-width) and (max-width: (@desktop-width - 1)) {
+    padding: 26px 38px;
+    border-left: 1px solid @special-grey;
+    border-right: 1px solid @special-grey;
   }
 }
 
@@ -12,8 +25,29 @@
   line-height: 16px;
   font-weight: 400;
   text-transform: uppercase;
+
+  @media (min-width: @desktop-width) {
+    flex-grow: 1;
+  }
 }
 
 .extra__specs {
   .basic-text();
+  width: 100%;
+
+  @media (min-width: @tablet-width) {
+    max-width: 325px;
+  }
+}
+
+.extra__button {
+  margin-top: 15px;
+
+  @media (min-width: @tablet-width) /* and (max-width: (@desktop-width - 1))*/ {
+    margin: 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 245px;
+  }
 }
