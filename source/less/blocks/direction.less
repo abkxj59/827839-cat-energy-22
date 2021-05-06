@@ -128,7 +128,7 @@
     width: 32px;
     height: 11px;
     right: 0;
-    top: 35%;
+    bottom: 3px;
     background-image: url("../img/icon-arrow-small.svg");
   }
 
@@ -143,5 +143,9 @@
   @media (min-width: @tablet-width) {
     font-size: 20px;
     line-height: 20px;
+
+    &::after {
+      bottom: 5px;
+    }
   }
 }
