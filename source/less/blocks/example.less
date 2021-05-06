@@ -1,22 +1,13 @@
 .example {
   position: relative;
+  background: @grey;
 
-  &::before {
-    background-color: @grey;
-    position: absolute;
-    content: "";
-    width: 100%;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
+  @media (min-width: @tablet-width) {
+    background: linear-gradient(to bottom, transparent, transparent 620px, @grey 620px, @grey);
+  }
 
-    @media (min-width: @tablet-width) {
-      top: 420px;
-    }
-
-    @media (min-width: @desktop-width) {
-      top: 195px;
-    }
+  @media (min-width: @desktop-width) {
+    background: linear-gradient(to bottom, transparent, transparent 205px, @grey 205px, @grey);
   }
 }
 
@@ -34,9 +25,16 @@
 
 .example__text {
   .basic-text();
+  margin-bottom: 25px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 55px;
+  }
 
   @media (min-width: @desktop-width) {
-    padding-top: 70px;
+    padding-top: 110px;
+    max-width: 438px;
+    margin-bottom: 70px;
   }
 }
 
