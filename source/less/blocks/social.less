@@ -8,18 +8,23 @@
 }
 
 .social__link {
-  &:hover path {
+  fill: @special-dark-grey;
+
+  &:hover {
     fill: @green;
   }
 
-  &--fb:hover path {
-    fill: none;
-    stroke: @green;
-  }
-
-  &:focus path {
+  &:focus  {
     fill: @green;
     opacity: 0.3;
+  }
+
+  &--fb {
+    stroke: @special-dark-grey;
+  }
+
+  &--fb:hover {
+    stroke: @green;
   }
 
   &--fb:focus path {
