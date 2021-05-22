@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HTML Academy: Кэт энерджи</title>
+    <link rel="preload" href="fonts/oswaldregular.woff2" as="font">
+    <link rel="preload" href="fonts/oswaldmedium.woff2" as="font">
     <link href="css/style.min.css" rel="stylesheet">
     <link rel="icon" href="img/favicon/favicon.ico" sizes="16x16 32x32" type="image/vnd.microsoft.icon">
     <link rel="icon" href="img/favicon/32.png" sizes="32x32" type="image/png">
@@ -19,7 +21,7 @@
           <img class="main-logo__img" src="img/logo-mobile.svg" width="34" height="38" alt="Логотип Cat Energy">
         </picture>
       </a>
-      <a class="page-header__logo page-header__logo--text main-logo">
+      <a class="page-header__logo page-header__logo--text main-logo" href="index.html">
         <picture>
           <source media="(min-width: 768px)" srcset="img/logo-text-tablet.svg">
           <img class="main-logo__text" src="img/logo-text-mobile.svg" width="101" height="18" alt="Логотип Cat Energy">
@@ -331,7 +333,9 @@
 
       <div class="page-footer__bottom footer-bottom">
         <div class="footer-bottom__wrapper wrapper">
-          <img class="footer-bottom__section footer-bottom__logo" src="img/logo-text-mobile.svg" alt="Логотип" width="128" height="24">
+          <a class="footer-bottom__section footer-bottom__logo" href="index.html">
+            <img src="img/logo-text-mobile.svg" alt="Логотип" width="128" height="24">
+          </a>
           <section class="footer-bottom__section footer-bottom__social social">
             <h2 class="social__title visually-hidden">Соцсети</h2>
             <ul class="social__list">
